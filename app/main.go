@@ -1,5 +1,8 @@
 package main
 
+import "parallel-sorting-go-/app/controllers"
+
 func main() {
-	print("tste")
+	controllers.MainController()
+
 }
