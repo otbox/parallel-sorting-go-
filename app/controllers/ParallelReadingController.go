@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"fmt"
 	service "parallel-sorting-go-/app/services"
 )
 
@@ -15,6 +16,7 @@ func ParallelReadingController(files []string) []int {
 
 	var allNumbers []int
 
+	fmt.Print("1. Paralallel Reading Files: \n")
 	for idx, path := range files {
 		processReading(idx, &allNumbers, path)
 	}

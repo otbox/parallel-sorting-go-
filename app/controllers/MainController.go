@@ -21,6 +21,6 @@ func MainController() {
 
 	allNumbers := ParallelReadingController(files)
 	chunks := service.NumbersSeparator(allNumbers, n)
-	ParallelSortingController(chunks, n)
 	fmt.Println(chunks)
+	ParallelSortingController(chunks, n)
 }
