@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"fmt"
+	service "parallel-sorting-go-/app/services"
 	"parallel-sorting-go-/app/views"
 )
 
@@ -18,5 +19,8 @@ func MainController() {
 		fmt.Printf("%v\t%v\n", idx, val)
 	}
 
-	ParallelReadingController(files)
+	allNumbers := ParallelReadingController(files)
+	chunks := service.NumbersSeparator(allNumbers, n)
+	ParallelSortingController(chunks, n)
+	fmt.Println(chunks)
 }

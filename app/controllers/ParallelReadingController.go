@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"fmt"
 	service "parallel-sorting-go-/app/services"
 )
 
@@ -11,7 +10,7 @@ func processReading(id int, allNumbers *[]int, file string) {
 	*allNumbers = append(*allNumbers, numbers...)
 }
 
-func ParallelReadingController(files []string) {
+func ParallelReadingController(files []string) []int {
 	service.InitGroup(len(files))
 
 	var allNumbers []int
@@ -20,7 +19,5 @@ func ParallelReadingController(files []string) {
 		processReading(idx, &allNumbers, path)
 	}
 
-	fmt.Println(allNumbers)
-
-	// service.
+	return allNumbers
 }
